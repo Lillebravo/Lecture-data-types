@@ -45,11 +45,16 @@ Represents numbers, both integers and decimal values. Just remember that decimal
 ```js
 35 // Valid number
 45.3 // Also valid number
+``` 
 
 ### Boolean
 A boolean represents either a true or false value.
 
-```js
-const 
+### Date
+A date is just a value that represents a date or time. 
 
-hej hej
+```js
+const now = new date();
+```
+
+This `new Date()` returns a date object that we can manipulate in many ways, and use in our application. 
