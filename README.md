@@ -28,6 +28,18 @@ We start with the foundations when it comes to JS. Data types, variables, user-i
 
 [If Statements](#if-statements)
 
+- [Basic if-syntax](#basic-if-syntax)
+- [if-else statement](#if-else-statement)
+- [Comparison Operators](#comparison-operators)
+  - [greater then, less then - <, >](#--greater-then-or-less-then)
+- [if-else-if statments](#if-else-if-statments)
+- [Truthy and Falsy](#truthy-and-falsy-values)
+- [Logical Operators](#logical-operators)
+  - [Logical AND - &&](#---logical-and)
+  - [Logical OR - ||](#---logical-or)
+  - [Logical NOT - !](#---logical-not)
+  - [Nullish Coalescing](#---nullish-coalescing)
+
 </details>
 
 ## Data Types in JavaScript
@@ -249,75 +261,227 @@ Even though this is allowed , it´s not recommended. Keep it clean, only one dat
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
-## If statements
+---
 
-An `if` statement is just a way for the application to decide which way to go. Simply put. Depending on conditions that we define, the application can do one thing or the other. Usually an application consists of hundreds of conditions in different combinations. So it´s an essential tool to know. 
+## If Statements
 
-What a statement means is also a good thing to know. It just means a set of instructions that the computer follows.
+An if statement is just a way for the application to decide which way to go. Simply put. Depending on certain conditions that we define, the application can do one thing or the other. Usually an application consists av hundreds of condition in different combinations, so it's an essential/fundamental tool to know about when coding.
 
-### Basic If syntax
+What a statment means is also a good thing to know. It just means a set of instructions that the computer follows.
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+### Basic if-syntax
 
 ```js
 if (condition) {
-    // Code to be executed if the condition is true
+  // code to be executed if the condition is true.
 }
 ```
 
-`if`is the keyword that tells the compiler that an if check is declared. The condition is a value that can be evaluated to either `true` or `false`. The code block contains the code to be executed when the condition is `true`.
+`if` is the keyword that tells the compiler that an if check is declared. The condition is a value that cand be evaluated to either `true` or `false`. The code block contains the code that is execuded when the condition is `true`.
 
 ```js
-const age = 27;
+const age = 20;
 
-if (age > 23) {
-    console.log("You are an adult.");
+if (age > 18) {
+  console.log("You are an adult.");
 }
 ```
 
-This is fine, if we just want to check if the condition is `true`, but what if it´s `false`? Maybe we want to handle that case as well. Lets look at the `else` keyword. 
+### if-else statement
 
-In this case and example, we want to console log something if we aren´t above the age of 23.
+This is fine, if we just want to check if the condition is `true`, but what if it's `false`? Maybe we want to handle that case as well. Let's look at the `else` keyword. Here is the basic syntax
 
 ```js
-const age = 27;
-
-if (age > 23) {
-    console.log("You are an adult.");
-}
-else {
-    console.log("You are a stinky child like Johan Rehn.");
+if (conditon) {
+  // code to execute if condition is true
+} else {
+  // code to execute if the condition is false.
 }
 ```
+
+In this case and example, we want to console.log something if we are not above the age of 18.
+
+```js
+const age = 20;
+
+if (age > 18) {
+  console.log("You are an adult.");
+} else {
+  console.log("You are still classed as a minor.");
+}
+```
+
+This is called an if-else statment. It is very common of course.
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
-## Comparison operators
-In order to evaluate our conditions we need tools for that, and they are called comparison operators. It´s the characters that we use to compare the variables or whatever it is we are comparing. 
+---
 
-`>, <` - Greater then, or less then
-Operators to check if something is greater then, or less then. It´s very straight forward.
+### Comparison operators
 
-`>=, <=` - Greater then or equal, less then or equal.
-Same as above, but with the added possibility for the "terms" to be equal to each other. 
+In order to evaluate our conditions we need tools for that, and they are called comparison operators. It's the characters that we use to compare the variables or whatever it is we are comparing.
 
-`==` equal (but NOT strict)
-Compares the 2 things to see if they are equal but not strict equal. It means that we can compare to values of different data types, and still get a true value. This is called equal with cohersion. It means that the editor or browser will try to convert one of the values to the other data type.
+#### greater then, or less then `>, <`
+
+Operator to check if something is greater then, or less then. It's very straight forward.
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+#### greater than OR equal, less then OR equal `>=, <=`
+
+Same as above but with the added possibility for the "terms", _( in lack of a better word )_, to be equal to eachother.
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+#### equal _( but NOT strict )_ `==`
+
+The compare the two things to see if they are equal but not strict equal. It means that we can compare to values of different data types, and still get a `true` value. This is called equal with cohersion. It means that the editor or browser will try to convert one of the values to the other data type.
 
 ```js
 "10" == 10; // => will be true
+
+100 == "hundred"; // => will be false, since they don't have the same kind of value.
 ```
-
-`===` equal (AND strict)
-Same as above but the values must be of the same data type.
-
-```js
-"10" === 10; // => will be false due to different data typed.
-10 === 10; // True
-```
-In the majority of cases, always go for the strict equal comparison.
-
-`!=` not equal (NOT strict)
-`!==` not equal (AND strict)
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
+#### equal _( AND strict )_ `===`
 
+Same as above but the values must be of the same data type.
+
+```js
+"10" === 10; // Will be false due to different data types.
+
+10 === 10; // true.
+```
+
+In the majority of cases, always go for the strict equal comparison.
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+#### not equal _( NOT strict)_ `!=`
+
+#### not equal _( AND strict)_ `!==`
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### if-else-if statments
+
+So if we want to do more specific checks it original one was evaluated to `false`, we can always do more if checks or we can chain it in a if-else-if chain.
+
+The difference is that if we have a chain of if-else-if, only one of the checks will run, which means, if on of the checks in the chain is true, the rest will be ignored.
+
+If we just do a number of if checks after each other, every if check will still run even though one of them was evaluated to `true`.
+
+Here is the basic syntax
+
+```js
+if (first condition) {
+    // code
+} else if (next condition) {
+    // code
+} else if (next condition) {
+    // code
+} else if (next condition) {
+    // code
+} else {
+    // code to run as a fallback if every other condition is false.
+}
+```
+
+Let's do an example with driver's license
+
+```js
+const age = 16;
+
+if (age >= 18) {
+  console.log("Great, you can take your driver's license.");
+} else if (age >= 16) {
+  console.log(
+    "Sorry, your are not old enough for a driver's license, but you can start practising."
+  );
+} else {
+  console.log("Sorry, you will have to take the bike.");
+}
+```
+
+There also exists something called a switch statement. But more on that later. Here is a link if you are interested: [switch statements](https://www.w3schools.com/js/js_switch.asp).
+
+### Nested if-statements
+
+if you want to do a check that is dependant on another check you can always nest if statments. But beware, it often leads to messy cody that is hard to read. But it's totally fine to do it.
+
+```js
+if (condition) {
+    if (condition based on earlier condition) {
+        // code to run if nested check is true
+    }
+
+    // code that always run if original condition is true
+}
+```
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### Truthy and Falsy values
+
+| Value                   | Type      | Truthy or Falsy |
+| ----------------------- | --------- | --------------- |
+| `false`                 | Boolean   | Falsy           |
+| `0`                     | Number    | Falsy           |
+| `-0`                    | Number    | Falsy           |
+| `""` (empty string)     | String    | Falsy           |
+| `null`                  | Object    | Falsy           |
+| `undefined`             | Undefined | Falsy           |
+| `NaN` (Not a Number)    | Number    | Falsy           |
+| `true`                  | Boolean   | Truthy          |
+| Non-zero numbers        | Number    | Truthy          |
+| Non-empty strings       | String    | Truthy          |
+| `{}` (empty object)     | Object    | Truthy          |
+| `[]` (empty array)      | Object    | Truthy          |
+| Arrays with content     | Object    | Truthy          |
+| Objects with properties | Object    | Truthy          |
+
+Sometimes we just want to evaluate variables directly, for instance, we want to see if a variable is defined or not.
+
+```js
+const name = "Niklas";
+
+if (name) {
+  console.log(`Oh, that's a cool name you have got ${name}`);
+}
+```
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### Logical operators
+
+#### `&&` - Logical AND
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+#### `||` - Logical OR
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+#### `!` - Logical NOT
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+#### `??` - Nullish Coalescing
+
+[Back to top](#2024-10-24-intro-to-javascript)
