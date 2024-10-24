@@ -1,43 +1,94 @@
 # Lecture-data-types
 Grundläggande termer, datatyper och variablerLära oss grundläggande verktyg för användar-input och output, Operatorer i JS, If-satser
 
+# 2024 10 24 Intro to JavaScript
+
+We start with the foundations when it comes to JS. Data types, variables, user-input and output, operators och if-statements.
+
+<details open>
+<summary>Table of content</summary>
+
+[Data Types](#data-types-in-javascript)
+
+- [String](#string)
+- [Number](#number)
+- [Boolean](#boolean)
+- [Undefined](#undefined)
+- [Null](#null)
+- [Objects](#object)
+- [Array](#array)
+- [Functions](#functions)
+- [Date](#date)
+
+[Variables](#variables)
+
+- [var](#var)
+- [const](#const)
+- [let](#let)
+
+[If Statements](#if-statements)
+
+</details>
+
+## Data Types in JavaScript
+
+| Data Type   | Description                                                          |
+| ----------- | -------------------------------------------------------------------- |
+| `String`    | Represents text: `"hello"`, `'world'`.                               |
+| `Number`    | Represents both integers and floating-point numbers: `42`, `3.14`.   |
+| `Boolean`   | Represents logical values: `true` or `false`.                        |
+| `Undefined` | A variable that has been declared but not yet assigned a value.      |
+| `Null`      | Represents the intentional absence of any object value.              |
+| `Object`    | Represents a collection of key-value pairs. More about it later.     |
+| `Array`     | A list of values, objects or other arrrays: `[1, 2, 3]`.             |
+| `Function`  | A block of code designed to perform a specific task: `function() {}` |
+| `Date`      | Represents dates and times: `new Date()`.                            |
 
 ### String
- string is just a collection of characters with in quotes. It can be both double quotes and single quote. But there also exist a third way of writing strings.
- ```js 
-"Jerry" // valid string
-'Jerry' // valid string
-`Jerry` // valid string
- ```
- These above are all equal, but the backticks-version have some extra functionality.
 
- For instance, backtics allows multiline strings. The other two dont't.
-
- ```js
- "My name
- is Jerry" // This wont work in a js file.
-
- `My name
- is Jerry" // This works just fine.
- ```
-
- Another example of added funtionality with backtics is the avility to inject variables inside the string, if it is defined woth backtics. 
-
- ```js
- const name = "Jerry";
- const lastName = "Lundahl";
-
- `Hello, my name is ${name} ${lastName}!`
-``` 
-This is also called a string literal.
-
-If we want to do the same thing with regular quation marks, we need to concatinate _(add)_,
+A string is just a collection of characters with in quotes. It can be both double quotes and single quotes. But there also exist a third way of writing strings.
 
 ```js
-const name = "Jerry";
-const lastName = "Lundahl";
+"Niklas"; // Valid string
+"Niklas" // Valid string
+`Niklas`; // Also valid string, but with backtics.
+```
+
+These above are all equal, but the backtics-version have some extra functionality.
+
+For instance, backtics allows multiline strings. The other two don't.
+
+```js
+"My name
+is Niklas" // This won't work in a js-file.
+
+`My name
+is Niklas.` // This however works just fine.
+```
+
+Another of added functionality with backtics is the ability to inject variables inside the string, if it is defined with backtics.
+
+```js
+const name = "Niklas";
+const lastName = "Fähnrich";
+
+`Hello, my name is ${name} ${lastName}!`;
+```
+
+This is also called a string literal.
+
+If we want to do the same thing with regular quotation marks, we need to concatinate. _( add )_.
+
+```js
+const name = "Niklas";
+const lastName = "Fähnrich";
+
 "Hello, my name is " + name + lastName + ".";
 ```
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
 
 ### Number
 Represents numbers, both integers and decimal values. Just remember that decimal values are witten with a period and not a comma.
@@ -47,8 +98,48 @@ Represents numbers, both integers and decimal values. Just remember that decimal
 45.3 // Also valid number
 ``` 
 
+[Back to top](#2024-10-24-intro-to-javascript)
+
 ### Boolean
-A boolean represents either a true or false value.
+A boolean represents either true or false.
+
+```js
+const somethingIsTrue = true;
+const somethingIsFalse = false;
+```
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+### Undefined
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### Null
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### Object
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### Array
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### Functions
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
 
 ### Date
 A date is just a value that represents a date or time. 
@@ -61,11 +152,18 @@ This `new Date()` returns a date object that we can manipulate in many ways, and
 
 ## Variables
 
-Variables is a way of storing values in reusable packages so to speak. 
-| Feature |
-'var'
-'let'
-'const'
+## Variables
+
+Variables is a way of storing values in resuable packages so to speak.
+
+| Feature        | `var`                           | `let`                                       | `const`                                             |
+| -------------- | ------------------------------- | ------------------------------------------- | --------------------------------------------------- |
+| Scope          | Function-scoped                 | Block-scoped                                | Block-scoped                                        |
+| Hoisting       | Yes, initialized as `undefined` | Yes, but not initialized before declaration | Yes, but not initialized before declaration         |
+| Re-declaration | Allowed                         | Not allowed                                 | Not allowed                                         |
+| Reassignment   | Allowed                         | Allowed                                     | Not allowed (for primitive values)                  |
+| Immutability   | No                              | No                                          | Yes (for the reference, but not for objects/arrays) |
+
 
 ### Var
 'var' is a key word that is used to create variables. And the key words are always paired with a variable name and a value. Ande the value can of course be of different data types. 
@@ -147,8 +245,9 @@ This is fine, but we can also change the data type if we would like.
 let id = "abc";
 id = "123"; // This is fine, the data type doesn´t matter. But it´s bad practice to change datatype
 ```
-
 Even though this is allowed , it´s not recommended. Keep it clean, only one datatype per variable. 
+
+[Back to top](#2024-10-24-intro-to-javascript)
 
 ## If statements
 
@@ -189,6 +288,8 @@ else {
 }
 ```
 
+[Back to top](#2024-10-24-intro-to-javascript)
+
 ## Comparison operators
 In order to evaluate our conditions we need tools for that, and they are called comparison operators. It´s the characters that we use to compare the variables or whatever it is we are comparing. 
 
@@ -216,4 +317,7 @@ In the majority of cases, always go for the strict equal comparison.
 
 `!=` not equal (NOT strict)
 `!==` not equal (AND strict)
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
 
