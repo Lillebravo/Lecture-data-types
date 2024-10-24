@@ -39,3 +39,15 @@ const lastName = "Lundahl";
 "Hello, my name is " + name + lastName + ".";
 ```
 
+### Number
+Represents numbers, both integers and decimal values. Just remember that decimal values are witten with a period and not a comma.
+
+```js
+35 // Valid number
+45.3 // Also valid number
+
+### Boolean
+A boolean represents either a true or false value.
+
+```js
+const 
