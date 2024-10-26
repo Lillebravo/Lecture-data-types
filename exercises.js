@@ -1,4 +1,4 @@
-// 1. Hälsa på användaren
+// --- 1. Hälsa på användaren ---
 /* function tellMeYourName() {
   let person = prompt("What is your name?", "Anders");
 
@@ -10,7 +10,6 @@
 } */
 
 // 2. Jämför 2 ord,  Be användaren mata in två ord och skriv ut vilket som kommer först i alfabetet.
-
 /* function compareWords() {
     let word1 = prompt("Input first word", "Cat");
     let word2 = prompt("Input second word", "Dog");
@@ -25,8 +24,8 @@
     }
 } */
 
-
-// 3. Är användaren vuxen? Fråga användaren om deras ålder och skriv i konsolen om de är över eller under 18.
+// --- 3. Är användaren vuxen? ---
+// Fråga användaren om deras ålder och skriv i konsolen om de är över eller under 18.
 /* function adultOrNot() {
   let age = prompt("How old are you?", "27");
 
@@ -47,3 +46,50 @@
       "You didn´t enter your age.";
   }
 } */
+
+// --- 4. Gissa ett djur ---
+// Låt användaren gissa vilket djur du tänker på (t.ex. "katt").
+// Om de gissar rätt, visa ett meddelande om att de har rätt.
+/* function guessAnimal() {
+  const listOfAnimals = ["Cat", "Dog", "Lizard", "Cow", "Fox"];
+  const randomAnimal =
+    listOfAnimals[Math.floor(Math.random() * listOfAnimals.length)];
+  let userGuess = prompt("Guess which animal I´m thinking of: ", "Cat");
+
+  if (userGuess == randomAnimal) {
+    document.getElementById("promptResponse").innerHTML =
+      "Your guess was correct! I was thinking of " + randomAnimal;
+  } else if (userGuess == null || userGuess == "") {
+    document.getElementById("promptResponse").innerHTML =
+      "You didn´t answer the question :(";
+  } else {
+    document.getElementById("promptResponse").innerHTML =
+      "You were wrong fool! Of course I was thinking of " + randomAnimal;
+  }
+} */
+
+/* --- 5. Känn igen en färg ---
+  Skapa ett program som frågar användaren efter deras favoritfärg och om den är "röd", "blå" eller "grön", 
+  ge en speciell kommentar för varje färg. */
+/* function askFavouriteColor() {
+  const listOfColors = ["Red", "Green", "Blue"];
+  let favouriteColor = prompt("What´s your favourite color?", "Red");
+
+  if (favouriteColor == listOfColors[0]) {
+    document.getElementById("promptResponse").innerHTML =
+      "Wow! " + listOfColors[0] + " is my favourite color as well!";
+  } else if (favouriteColor == listOfColors[1]) {
+    document.getElementById("promptResponse").innerHTML =
+      "I guess " + listOfColors[1] + " is an okay color.";
+  } else if (favouriteColor == listOfColors[2]) {
+    document.getElementById("promptResponse").innerHTML =
+      "I´m shocked, I thought no one likes " + listOfColors[2] + ".";
+  } else if (favouriteColor == null || favouriteColor == "") {
+    document.getElementById("promptResponse").innerHTML =
+    "You didn´t enter a color :(";
+  } else {
+    document.getElementById("promptResponse").innerHTML =
+    "I guess that´s an okay color, but not as good as " + listOfColors + ".";
+  }
+}*/
+
