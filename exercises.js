@@ -93,3 +93,25 @@
   }
 }*/
 
+/* --- 6. Godkänd eller inte ---
+Låt användaren mata in sitt provresultat (0-100) och skriv ut om de är godkända (minst 50 poäng) eller inte. */
+
+/* function passTheTest() {
+  const passingGrade = 50;
+  let userTestScore = prompt("What did you score on your last test(0-100)?", "50");
+
+  if (userTestScore > passingGrade && userTestScore <= 100) {
+    document.getElementById("promptResponse").innerHTML = "You passed the test!";
+  } else if (userTestScore == passingGrade) {
+    document.getElementById("promptResponse").innerHTML = "Wow, you just barely passed the test!";
+  } else if (userTestScore == null || userTestScore == "" || userTestScore == NaN) {
+    document.getElementById("promptResponse").innerHTML = "Hey! You need to enter a number!";
+  } else if (userTestScore < passingGrade && userTestScore >= 0) {
+    document.getElementById("promptResponse").innerHTML = "Sorry you failed the test...";
+  } else {
+    document.getElementById("promptResponse").innerHTML = "That´s not an allowed input.";
+  }
+} */
+
+
+
