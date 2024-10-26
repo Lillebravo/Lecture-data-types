@@ -6,7 +6,20 @@
     <title>JS Calculator</title>
   </head>
   <body>
+    <h1>Traditional Calculator</h1>
+    <input type="number" id="display" value="0" />
+    <br>
+    <button onclick="handleOperator('+')">+</button>
+    <button onclick="handleOperator('-')">-</button>
+    <button onclick="handleOperator('*')">*</button>
+    <button onclick="handleOperator('/')">/</button>
+    <button onclick="traditionalCalculate()">=</button>
+    <button onclick="clearCalculator()">C</button>
+
     <h1>Simple JS Calculator</h1>
+    <button onclick="calculate()">calculate</button>
+
+    <p id="result"></p>
 
     <script src="jsCalculator.js"></script>
   </body>
