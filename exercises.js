@@ -113,5 +113,163 @@ Låt användaren mata in sitt provresultat (0-100) och skriv ut om de är godkä
   }
 } */
 
+/* --- 7. Vad ska vi göra idag? ---
+Skapa ett program som frågar användaren om vädret är soligt, regnigt eller molnigt och ger ett förslag på aktivitet beroende på svaret. */
 
+/* function askWeather() {
+  const listOfWeatherConditions = ["Sunny", "Rainy", "Cloudy"];
+  let userWeatherReport = prompt("What´s the weather like today?", "Sunny");
 
+  if (userWeatherReport == listOfWeatherConditions[0]) {
+    document.getElementById("promptResponse").innerHTML =
+      "I love it when it´s " +
+      listOfWeatherConditions[0] +
+      ". Let´s go to the beach!";
+  } else if (userWeatherReport == listOfWeatherConditions[1]) {
+    document.getElementById("promptResponse").innerHTML =
+      "Oh that´s the worst! We should just stay in and watch a movie if it´s raining.";
+  } else if (userWeatherReport == listOfWeatherConditions[2]) {
+    document.getElementById("promptResponse").innerHTML =
+      "I guess we could go for a picnic if it´s " + listOfWeatherConditions[2] + ".";
+  } else if (userWeatherReport == null || userWeatherReport == "") {
+    document.getElementById("promptResponse").innerHTML =
+      "You didn´t answer the question :(";
+  } else {
+    document.getElementById("promptResponse").innerHTML =
+      "I don´t really care unless it´s " + listOfWeatherConditions;
+  }
+} */
+
+/* --- 8. Vilket språk talar du? ---
+Skapa ett program som frågar användaren vilket språk de talar och svarar på olika sätt beroende på om de talar
+ svenska, engelska eller något annat språk. */
+/* function askLanguage() {
+    const languages = ["swedish", "english", "japanese", "thai"];
+    let userLanguage = prompt("What is your mother language?", "swedish");
+
+    if (userLanguage == languages[0]) {
+        document.getElementById("promptResponse").innerHTML = "Hallå ja pågar o töser!";
+    } else if (userLanguage == languages[1]) {
+        document.getElementById("promptResponse").innerHTML = "Ah, a fellow gentleman!";
+    } else if (userLanguage == languages[2]) {
+        document.getElementById("promptResponse").innerHTML = "こんにちは! 私の日本語はそれほど上手ではありません";
+    } else if (userLanguage == languages[3]) {
+        document.getElementById("promptResponse").innerHTML = "สวัสดี! ภาษาไทยของฉันไม่ค่อยดีนัก";
+    } else if (userLanguage == null || userLanguage == "") {
+        document.getElementById("promptResponse").innerHTML = "Please answer the question.";
+    } else {
+        document.getElementById("promptResponse").innerHTML = "Hmm, I don´t know this language.";
+    }
+} */
+
+/* --- 9. Multipel av 5? ---
+Skapa ett program som frågar användaren efter ett tal och kollar om talet är en multipel av 5. */
+
+/* function checkNumber5Multiplier() {
+    let userInput = prompt("Input a number and I will check if it's a multiple of 5: ", "10");
+    let userNumber = parseFloat(userInput);
+
+    if (userInput === null || userInput.trim() === "") {
+        document.getElementById("promptResponse").innerHTML = "Please answer the question.";
+    } else if (isNaN(userNumber)) {
+        document.getElementById("promptResponse").innerHTML = "You need to enter a valid number.";
+    } else if (userNumber % 5 === 0) {
+        document.getElementById("promptResponse").innerHTML = "The number " + userNumber + " is a multiple of 5.";
+    } else {
+        document.getElementById("promptResponse").innerHTML = userNumber + " is not a multiple of 5.";
+    }
+} */
+
+/* --- 10. Ska vi gå ut? ---
+Använd confirm för att fråga användaren om de vill gå ut och skriv ut ett meddelande beroende på svaret. */
+
+/* function letsGoOut() {
+    let userInput = confirm("You want to go out?");
+
+    if (userInput) {
+        document.getElementById("promptResponse").innerHTML = "Yeah, let´s do it!";
+    } else {
+        document.getElementById("promptResponse").innerHTML = "I guess we´ll netflix and chill then.";
+    }
+} */
+
+/* --- 11. Siffra eller bokstav? ---
+Låt användaren skriva in ett tecken. Kolla om det är en siffra eller en bokstav och skriv ut resultatet. */
+
+/* function checkUserInput() {
+    let userInput = prompt("Write a letter or a number and I will check which it is:", "5");
+
+    if (userInput === null || userInput === "") {
+        document.getElementById("promptResponse").innerHTML = "Please answer the question.";
+    } else if (/^[a-zA-Z]+$/.test(userInput)) {
+        document.getElementById("promptResponse").innerHTML = userInput + " is a letter.";
+    } else if (Number.isFinite(Number(userInput))) {
+        document.getElementById("promptResponse").innerHTML = userInput + " is a number.";
+    } else if (userInput.length > 1) {
+        document.getElementById("promptResponse").innerHTML = "Please write only one character.";
+    } else {
+        document.getElementById("promptResponse").innerHTML = userInput + " is neither a number or a symbol.";
+    }
+} */
+
+/* --- 12. Största av tre ord ---
+Fråga användaren om tre olika ord och skriv ut vilket som är längst. */
+
+/* function biggestWord() {
+  let word1 = prompt("Input one word:", "Hej");
+  let word2 = prompt("Input a second word:", "Alex");
+  let word3 = prompt("Input third word:", "Hästar");
+
+  if (
+    word1 === null ||
+    word1 === "" ||
+    word2 === null ||
+    word2 === "" ||
+    word3 === null ||
+    word3 === ""
+  ) {
+    document.getElementById("promptResponse").innerHTML =
+      "Please answer all the questions.";
+  } else if (
+    !/^[a-öA-Ö]+$/.test(word1) ||
+    !/^[a-öA-Ö]+$/.test(word2) ||
+    !/^[a-öA-Ö]+$/.test(word3)
+  ) {
+    document.getElementById("promptResponse").innerHTML =
+      "Please enter only words with letters and no numbers or symbols.";
+  } else if (word1.length > word2.length && word1.length > word3.length) {
+    document.getElementById("promptResponse").innerHTML =
+      word1 + " is the longest word.";
+  } else if (word2.length > word1.length && word2.length > word3.length) {
+    document.getElementById("promptResponse").innerHTML =
+      word2 + " is the longest word.";
+  } else if (word3.length > word1.length && word3.length > word2.length) {
+    document.getElementById("promptResponse").innerHTML =
+      word3 + " is the longest word.";
+  } else {
+    document.getElementById("promptResponse").innerHTML =
+      "There is a tie for the longest word.";
+  }
+} */
+
+/* --- 13. Lösenordskontroll ---
+Skapa ett program som frågar efter ett lösenord och skriver ut om lösenordet är tillräckligt långt 
+(minst 8 tecken) och innehåller minst en siffra. */
+
+/* function checkPasswordLength() {
+    let password = prompt("Select your password(it needs to be min. 8 characters and contain at least one number): ", "HejsanHoppsan1");
+
+    if (password.length >= 8 && /\d/.test(password)) {
+        document.getElementById("promptResponse").innerHTML = "Your password has been successfully created!";
+    } else {
+        document.getElementById("promptResponse").innerHTML = "Your password doesn´t meet the requirments.";
+    }
+} */
+
+/* --- 14. Ålderskategori ---
+Skapa ett program där användaren matar in sin ålder och baserat på det, skriv ut vilken ålderskategori de tillhör:
+ barn (0-12), tonåring (13-19), vuxen (20-64), eller pensionär (65+). */
+
+function ageBracket() {
+    
+}
