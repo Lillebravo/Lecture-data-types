@@ -270,6 +270,38 @@ Skapa ett program som frågar efter ett lösenord och skriver ut om lösenordet 
 Skapa ett program där användaren matar in sin ålder och baserat på det, skriv ut vilken ålderskategori de tillhör:
  barn (0-12), tonåring (13-19), vuxen (20-64), eller pensionär (65+). */
 
-function ageBracket() {
-    
+/* function ageBracket() {
+    let age = prompt("Enter your age (1-100): ", "27");
+
+    if (/^\d+$/.test(age) && age > 0) {
+        if (age <= 12) {
+            document.getElementById("promptResponse").innerHTML = "You are a child.";
+        } else if (age <= 19) {
+            document.getElementById("promptResponse").innerHTML = "You are a teenager.";
+        } else if (age <= 64) {
+            document.getElementById("promptResponse").innerHTML = "You are an adult.";
+        } else if (age > 64 && age <= 100) {
+            document.getElementById("promptResponse").innerHTML = "You are retired.";
+        } else if (age > 100) {
+            document.getElementById("promptResponse").innerHTML = "You are dead...";
+        }
+    } else if (age == null || age == "") {
+        document.getElementById("promptResponse").innerHTML = "Please answer the question.";
+    } else {
+        document.getElementById("promptResponse").innerHTML = "Please input a number between 1-100!";
+    }
+} */
+
+/* --- 15. Beslutstagande ---
+Skapa ett program där användaren får två alternativ (med confirm för båda alternativen), och beroende på deras val,
+ skriv ut ett specifikt resultat. */ // PÅ RIKTIGT VAR DETTA EN SVÅR UPPGIFT? FRÅGA LÄRAREN PÅ TISDAG!
+
+function choice() {
+    let userChoice = confirm("Do you like ice cream?");
+
+    if (userChoice) {
+        document.getElementById("promptResponse").innerHTML = "Ah, you are one of the good ones!";
+    } else {
+        document.getElementById("promptResponse").innerHTML = "You obviously can´t be trusted...";
+    }
 }
