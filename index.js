@@ -1,32 +1,49 @@
-// #### Var ####
-/* var firstName = "Jerry";
-console.log(firstName);
+// "My name is
+// Niklas."; // Don't work
 
-var firstName = "Johan";
-console.log(firstName);
+`My name is 
+Jerry and I am
+a developer.`; // Works just fine!
 
-var firstName = "Jerry";
-console.log(firstName); // Jerry
+// ############ var ############ //
 
-firstName = "Johan"; // Re-assignment, it´s valid.
-console.log(firstName); // Johan */
+// console.log(firstName);
 
-// #### const ####
-/* const age = 27;
-console.log(age);
+// var firstName = "Niklas";
+// console.log(firstName);
 
-age = 30;
-console.log(age);  */
+// var firstName = "Henrik";
+// console.log(firstName);
 
-/* const firstName = "Jerry";
+// firstName = "Erik"; // Re-assignment, it's valid.
+// console.log(firstName); // Erik
 
-if (true) {
-    const lastName = "Lundahl";
-    console.log(firstName);
-}
+// var lastName;
 
-console.log(firstName); // Exists
-console.log(lastName); // Doesn´t exist in this scope.  */
+// ############ const ############ //
+
+// const age = 39;
+// console.log(age);
+
+// // age = 45;
+// // console.log(age);
+
+// const number = 54;
+// // const number = 45; // Won't work, VSC will complain.
+// console.log(number);
+// const name = "Niklas";
+
+// const firstName = "Niklas";
+// const lastName = "Johnsson";
+
+// if (true) {
+//   const lastName = "Svensson"; // A totally different variable, it's another scope.
+//   console.log(firstName); // Niklas
+//   console.log(lastName);
+// }
+
+// console.log(firstName); // Exists.
+// console.log(lastName); //Doesn't exist in this scope.
 
 // ############ if statements ############ //
 
