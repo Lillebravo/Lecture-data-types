@@ -1,4 +1,5 @@
 # Lecture-data-types
+
 Grundläggande termer, datatyper och variablerLära oss grundläggande verktyg för användar-input och output, Operatorer i JS, If-satser
 
 # 2024 10 24 Intro to JavaScript
@@ -98,18 +99,20 @@ const lastName = "Fähnrich";
 ---
 
 ### Number
+
 Represents numbers, both integers and decimal values. Just remember that decimal values are witten with a period and not a comma.
 
 ```js
-35 // Valid number
-45.3 // Also valid number
-``` 
+35; // Valid number
+45.3; // Also valid number
+```
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 ### Boolean
+
 A boolean represents either true or false.
 
 ```js
@@ -161,15 +164,15 @@ Se this link for more info: [Functions - W3schools](https://www.w3schools.com/js
 
 ---
 
-
 ### Date
-A date is just a value that represents a date or time. 
+
+A date is just a value that represents a date or time.
 
 ```js
 const now = new date();
 ```
 
-This `new Date()` returns a date object that we can manipulate in many ways, and use in our application. 
+This `new Date()` returns a date object that we can manipulate in many ways, and use in our application.
 
 ---
 
@@ -185,16 +188,16 @@ Variables is a way of storing values in resuable packages so to speak.
 | Reassignment   | Allowed                         | Allowed                                     | Not allowed (for primitive values)                  |
 | Immutability   | No                              | No                                          | Yes (for the reference, but not for objects/arrays) |
 
-
 ### Var
-'var' is a key word that is used to create variables. And the key words are always paired with a variable name and a value. Ande the value can of course be of different data types. 
+
+'var' is a key word that is used to create variables. And the key words are always paired with a variable name and a value. Ande the value can of course be of different data types.
 
 ```js
 var firstName = "Jerry";
 console.log(firstName);
 ```
 
-`var` has some special characteristics, one of them is that it is re-declarable. 
+`var` has some special characteristics, one of them is that it is re-declarable.
 That means that we can declare the same variable again with a new value.
 
 ```js
@@ -204,7 +207,8 @@ console.log(firstName); // Jerry
 var firstName = "Johan"; // Re-declaration, it´s valid.
 console.log(firstName); // Johan
 ```
-You can also re-assign the value on a `var`. 
+
+You can also re-assign the value on a `var`.
 
 ```js
 var firstName = "Jerry";
@@ -224,7 +228,8 @@ Because of this, don´t use `var` at all. Use the newer types `let` and `const`.
 ---
 
 ## const
-`const` is also a keyword for creating variables. It stands for `constant` which means it is supposed to be constant. It means we shouldn´t change this variable after it has been created. 
+
+`const` is also a keyword for creating variables. It stands for `constant` which means it is supposed to be constant. It means we shouldn´t change this variable after it has been created.
 
 ```js
 const age = 27;
@@ -232,33 +237,34 @@ console.log(age);
 age = 30; // Won´t work, VSC will sometimes complain and browser will always complain.
 ```
 
-We can´t re-declare a `const`. 
+We can´t re-declare a `const`.
 
 ```js
 const age = 27;
 
-const age = 30; // Won´t work, VSC will complain. 
+const age = 30; // Won´t work, VSC will complain.
 console.log(age);
 ```
 
-`const` is block scoped, which means if it´s created inside a pair of brackets, in only lives in there. It it´s created at the top level of a JS-file, it lives inside the entire file. 
+`const` is block scoped, which means if it´s created inside a pair of brackets, in only lives in there. It it´s created at the top level of a JS-file, it lives inside the entire file.
 
 ```js
 const name = "Jerry";
 
 if (true) {
-    const lastName = "Lundahl";
-    console.log(name);
+  const lastName = "Lundahl";
+  console.log(name);
 }
 
 console.log(name);
-console.log(lastName); // Doesn´t exist in this scope. 
+console.log(lastName); // Doesn´t exist in this scope.
 ```
 
 ---
 
 ## let
-This is the last keyword we can use in order to create variables. It is very similar to const but we are allowed to re-assign a `let` variable. 
+
+This is the last keyword we can use in order to create variables. It is very similar to const but we are allowed to re-assign a `let` variable.
 
 ```js
 let theseStreets = "kungsbacka";
@@ -271,7 +277,8 @@ This is fine, but we can also change the data type if we would like.
 let id = "abc";
 id = "123"; // This is fine, the data type doesn´t matter. But it´s bad practice to change datatype
 ```
-Even though this is allowed , it´s not recommended. Keep it clean, only one datatype per variable. 
+
+Even though this is allowed , it´s not recommended. Keep it clean, only one datatype per variable.
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
@@ -384,7 +391,6 @@ Same as above but the values must be of the same data type.
 In the majority of cases, always go for the strict equal comparison.
 
 [Back to top](#2024-10-24-intro-to-javascript)
-
 
 ---
 
