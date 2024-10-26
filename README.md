@@ -1,6 +1,7 @@
 # Lecture-data-types
 
-Grundläggande termer, datatyper och variablerLära oss grundläggande verktyg för användar-input och output, Operatorer i JS, If-satser
+Grundläggande termer, datatyper och variabler, arrayer, funktioner, objeckt, OOP. 
+Lära oss grundläggande verktyg för användar-input och output, Operatorer i JS, If-satser
 
 # 2024 10 24 Intro to JavaScript
 
