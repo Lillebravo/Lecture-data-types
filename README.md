@@ -31,14 +31,9 @@ We start with the foundations when it comes to JS. Data types, variables, user-i
 - [Basic if-syntax](#basic-if-syntax)
 - [if-else statement](#if-else-statement)
 - [Comparison Operators](#comparison-operators)
-  - [greater then, less then - <, >](#--greater-then-or-less-then)
 - [if-else-if statments](#if-else-if-statments)
 - [Truthy and Falsy](#truthy-and-falsy-values)
 - [Logical Operators](#logical-operators)
-  - [Logical AND - &&](#---logical-and)
-  - [Logical OR - ||](#---logical-or)
-  - [Logical NOT - !](#---logical-not)
-  - [Nullish Coalescing](#---nullish-coalescing)
 
 </details>
 
@@ -112,6 +107,8 @@ Represents numbers, both integers and decimal values. Just remember that decimal
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
+---
+
 ### Boolean
 A boolean represents either true or false.
 
@@ -122,7 +119,11 @@ const somethingIsFalse = false;
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
+---
+
 ### Undefined
+
+Se this link for more info: [Undefined - W3schools](https://www.w3schools.com/jsref/jsref_undefined.asp)
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
@@ -130,11 +131,15 @@ const somethingIsFalse = false;
 
 ### Null
 
+Se this link for more info: [Null - Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null)
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 ### Object
+
+Se this link for more info: [Object - W3schools](https://www.w3schools.com/js/js_objects.asp)
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
@@ -142,11 +147,15 @@ const somethingIsFalse = false;
 
 ### Array
 
+Se this link for more info: [Arrays - W3schools](https://www.w3schools.com/js/js_arrays.asp)
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 ### Functions
+
+Se this link for more info: [Functions - W3schools](https://www.w3schools.com/js/js_functions.asp)
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
@@ -162,7 +171,7 @@ const now = new date();
 
 This `new Date()` returns a date object that we can manipulate in many ways, and use in our application. 
 
-## Variables
+---
 
 ## Variables
 
@@ -212,6 +221,8 @@ If declaring a var in the top, you might forget it and re-declare it later in th
 
 Because of this, don´t use `var` at all. Use the newer types `let` and `const`.
 
+---
+
 ## const
 `const` is also a keyword for creating variables. It stands for `constant` which means it is supposed to be constant. It means we shouldn´t change this variable after it has been created. 
 
@@ -243,6 +254,9 @@ if (true) {
 console.log(name);
 console.log(lastName); // Doesn´t exist in this scope. 
 ```
+
+---
+
 ## let
 This is the last keyword we can use in order to create variables. It is very similar to const but we are allowed to re-assign a `let` variable. 
 
@@ -271,6 +285,8 @@ What a statment means is also a good thing to know. It just means a set of instr
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
+---
+
 ### Basic if-syntax
 
 ```js
@@ -288,6 +304,8 @@ if (age > 18) {
   console.log("You are an adult.");
 }
 ```
+
+---
 
 ### if-else statement
 
@@ -323,11 +341,15 @@ This is called an if-else statment. It is very common of course.
 
 In order to evaluate our conditions we need tools for that, and they are called comparison operators. It's the characters that we use to compare the variables or whatever it is we are comparing.
 
+---
+
 #### greater then, or less then `>, <`
 
 Operator to check if something is greater then, or less then. It's very straight forward.
 
 [Back to top](#2024-10-24-intro-to-javascript)
+
+---
 
 #### greater than OR equal, less then OR equal `>=, <=`
 
@@ -347,6 +369,8 @@ The compare the two things to see if they are equal but not strict equal. It mea
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
+---
+
 #### equal _( AND strict )_ `===`
 
 Same as above but the values must be of the same data type.
@@ -360,6 +384,9 @@ Same as above but the values must be of the same data type.
 In the majority of cases, always go for the strict equal comparison.
 
 [Back to top](#2024-10-24-intro-to-javascript)
+
+
+---
 
 #### not equal _( NOT strict)_ `!=`
 
@@ -410,6 +437,8 @@ if (age >= 18) {
 ```
 
 There also exists something called a switch statement. But more on that later. Here is a link if you are interested: [switch statements](https://www.w3schools.com/js/js_switch.asp).
+
+---
 
 ### Nested if-statements
 
@@ -464,7 +493,33 @@ if (name) {
 
 ### Logical operators
 
+If you want to compare several conditions at the same time, you can use logical operators.
+
 #### `&&` - Logical AND
+
+Is used to check conditions and all of them must be true in order for the entire condition to be true as well.
+
+```js
+const isAnAdult = true;
+const isCool = true;
+const isAwesome = true;
+
+if (isAnAdult && isCool && isAwesome) {
+  console.log("Wow, you are both an adult and cool."); // Will run since all of the above is true.
+}
+```
+
+In the above case, all the "smaller" conditions must be `true` in order for the entire if check to be evaluated to `true`.
+
+```js
+const isAnAdult = false;
+const isCool = true;
+const isAwesome = true;
+
+if (isAnAdult && isCool && isAwesome) {
+  console.log("Wow, you are both an adult and cool."); // Will NOT run since NOT all of the above is true.
+}
+```
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
@@ -472,16 +527,61 @@ if (name) {
 
 #### `||` - Logical OR
 
+Is used to evaluate a if check to true if either one of the "smaller" conditions is true.
+
+```js
+const isAnAdult = false;
+const isCool = true;
+
+if (isAnAdult || isCool) {
+  console.log("Wow, you are adult OR cool."); // Will run since one of them is true.
+}
+```
+
+Or with more conditions
+
+```js
+const isAnAdult = false;
+const isCool = true;
+const isAwesome = true;
+
+if (isAnAdult || isCool || isAwesome) {
+  console.log("Wow, you are an adult or cool or awesome."); // Will run since one of them is true.
+}
+```
+
+Remember, the conditions is always evaluated from left to right. So if we have a `||`, it only needs to check the first condition if that's true in order evaluate the entire expression to true.
+
+Same with `&&`, goes from left to right. If the first of three is `true`, it must check the seconde on and the the third one and if one of them is `false` it will ignore the rest and just evaluate everyhing to `false`,
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 #### `!` - Logical NOT
 
+If you put an exclamation mark before a variable or condition, it will be inverted. So if you write `!true`, it will be false. And `!false` will be true.
+
+```js
+const firstName = ""; // This is normally falsy.
+
+if (firstName) {
+  // some code. This won't run since it's falsy.
+}
+
+if (!firstName) {
+  //some code. This will run since the exclamation mark inverts the result of the evaluation.
+}
+```
+
+Thing of the `!`-sign to be NOT, or the opposite evaluation to what you have.
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 #### `??` - Nullish Coalescing
+
+See this link for more info on [Nullish Coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 
 [Back to top](#2024-10-24-intro-to-javascript)
